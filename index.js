@@ -238,9 +238,16 @@ Example born in 1901 and died in 1959 - included -- born in 1889 and died in 192
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
-function get20s(array) {}
-console.log("task 4", get20s(artists));
-
+function get20s(array) {
+  const options = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i]["years"] >= "1900") {
+      options.push(array[i]["name"]);
+    }
+  }
+  return options;
+}
+console.log("task 4", lotsOfArt(artists));
 // function filterByWord(array, string) {
 //   const filteredArray = [];
 //   for (let i = 0; i < array.length; i++) {
@@ -263,12 +270,12 @@ For example, if removeArtist is invoked with the artists array and the number 0,
 function removeArtist(array, index) {
   for (let i = 0; i < array.length; i++) {
     if (array[i] === [index]) {
-      array.splice(i, 1);
+      array[index];
     }
   }
   return array.length;
 }
-console.log("task 5", removeArtist(artists, 7));
+console.log("task 5", removeArtist(artists, 0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
@@ -307,9 +314,12 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lotsOfArt(array) {
+  if (array.paintings >= 100) {
+    return array;
+  }
 }
+console.log("task 7", lotsOfArt(artists));
 
 /* ***** END OF TASKS ***** */
 
